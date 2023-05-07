@@ -27,11 +27,52 @@
 
 .ocrimage{
     display: none;
+    animation: 1s ocr-image-animation;
+
+}
+
+@keyframes ocr-image-animation {
+    0%{
+        transform: translateX(1000%);
+        transition: transform 0.25s ;
+    }
+    20%{
+        transform: translateX(-50%);
+        transition: transform 0.25s ;
+    }
+    40%{
+        transform: translateX(20%);
+        transition: transform 0.15s ;
+    }
+    60%{
+        transform: translateX(-10%);
+        transition: transform 0.15s ;
+    }
+    80%{
+        transform: translateX(5%);
+        transition: transform 0.1s ;
+    }
+    90%{
+        transform: translateX(-1%);
+        transition: transform 0.05s ;
+    }
+    100%{
+        transform: translateX(0%);
+        transition: transform 0.05s ;
+    }
 }
 
 @media (min-width: 800px) {
     .ocrimage {
         display: flex;
+        margin-right: 10px;
+    }
+}
+
+@media (min-width: 900px) {
+    .ocrimage {
+        display: flex;
+        margin-right: 100px;
     }
 }
 
@@ -40,12 +81,11 @@
     background-image: url("../Assets/BackImage.svg");
     background-position: center;
     background-size: cover;
-    width: 100%;
     height: 950px;
     padding-top: 20%;
 }
 
-@media (min-width: 400px) {
+@media (min-width: 600px) {
     .imagecontainer {
         padding-top: 20%;
         height: 750px;
@@ -59,37 +99,86 @@
     }
 }
 
+.textboxtoanimate{
+    animation: 1s text-box-animation;
+}
+
+@keyframes text-box-animation {
+    0%{
+        transform: translateX(-1000%);
+        transition: transform 0.25s ;
+
+    }
+    20%{
+        transform: translateX(50%);
+        transition: transform 0.25s ;
+
+    }
+    40%{
+        transform: translateX(-20%);
+        transition: transform 0.15s ;
+    }
+    60%{
+        transform: translateX(10%);
+        transition: transform 0.15s ;
+    }
+    80%{
+        transform: translateX(-5%);
+        transition: transform 0.1s ;
+    }
+    90%{
+        transform: translateX(1%);
+        transition: transform 0.05s ;
+    }
+    100%{
+        transform: translateX(0%);
+        transition: transform 0.05s ;
+    }
+}
+
+
+
 
 .icon:hover {
-    animation: 1s icon-animation;
+    animation: 0.7s icon-animation;
+
 }
 
 @keyframes icon-animation {
     50% {
         transform: scale(2);
-        transition: transform 0.2s ease-in;
+        transition: transform 0s;
     }
 
     75% {
         transform: scale(1.7) rotate(270deg);
-        transition: transform 0.4s;
+        transition: transform 0.3s;
     }
 
     80% {
         transform: scale(1.5) rotate(270deg);
+        transition: transform 0.4s;
     }
 }
 
 .sideimage {
     height: 150px;
     width: 150px;
-    padding-left: 40%;
+    padding-left: 30%;
+}
+
+@media (min-width: 700px) {
+    .sideimage {
+        height: 350px;
+        width: 350px;        
+    }
 }
 
 @media (min-width: 900px) {
     .sideimage {
-        height: 350px;
-        width: 350px;
+        height: 400px;
+        width: 400px;
+        padding-left: 0%;
     }
 }
 
@@ -182,4 +271,11 @@
     .getintouchcards {
         width: 60%;
     }
+}
+
+
+.paycardsbackground{
+    background-image: url("../Assets/TextureBack.svg");
+    background-position: center;
+    background-size: cover;
 }

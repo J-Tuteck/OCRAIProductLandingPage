@@ -44,11 +44,11 @@ const LandingPage = () => {
                                 <ListItemButton>
                                     <ListItemIcon>
                                         {
-                                            index === 0 ? <ShoppingCartIcon sx={{color:'#032D75'}}/>
-                                                : index === 1 ? <EmojiObjectsIcon  sx={{color:'#032D75'}} />
-                                                    : index === 2 ? <WidgetsIcon sx={{color:'#032D75'}} />
-                                                        : index === 3 ? <MonetizationOnIcon  sx={{color:'#032D75'}} />
-                                                            : index === 4 ? <LoginIcon sx={{color:'#032D75'}} />
+                                            index === 0 ? <ShoppingCartIcon sx={{ color: '#032D75' }} />
+                                                : index === 1 ? <EmojiObjectsIcon sx={{ color: '#032D75' }} />
+                                                    : index === 2 ? <WidgetsIcon sx={{ color: '#032D75' }} />
+                                                        : index === 3 ? <MonetizationOnIcon sx={{ color: '#032D75' }} />
+                                                            : index === 4 ? <LoginIcon sx={{ color: '#032D75' }} />
                                                                 : ''
                                         }
                                     </ListItemIcon>
@@ -104,36 +104,42 @@ const LandingPage = () => {
 
     return (
         <>
-            <Grid sx={{ background: "#0C1128", position: 'fixed', zIndex: '1' }} container >
-                <Grid item lg={4} md={4} sm={10} xs={10} ><h2 style={{ color: "white", textAlign: "center" }}>Business LOGO</h2></Grid>
-                <Grid className='menubar' item lg={6} md={6} sm={12} marginTop={"1.4rem"} marginBottom={"1.6rem"} >
-                    <Link href='' sx={{ fontSize: "13px", textDecoration: "none", color: 'white', paddingLeft: "20px", paddingRight: "20px" }}>Products</Link>
-                    <Link href='' sx={{ fontSize: "13px", textDecoration: "none", color: 'white', paddingLeft: "20px", paddingRight: "20px" }}>Solutions</Link>
-                    <Link href='' sx={{ fontSize: "13px", textDecoration: "none", color: 'white', paddingLeft: "20px", paddingRight: "20px" }}>Resources</Link>
-                    <Link href='' sx={{ fontSize: "13px", textDecoration: "none", color: 'white', paddingLeft: "20px", paddingRight: "20px" }}>Pricing</Link>
-                    <Link href='' sx={{ fontSize: "13px", textDecoration: "none", color: 'white', paddingLeft: "20px", paddingRight: "20px" }}>LogIn</Link>
-                    <span style={{ marginTop: '-10px', marginLeft: '40px' }}>
-                        {getStartedForFreeButton('contained')}
-                    </span>
+            <Grid container sx={{ position: 'fixed', zIndex: '2' }}>
+                <Grid sx={{ background: "#0C1128" }} container >
+                    <Grid item lg={4} md={4} sm={10} xs={10} ><h2 style={{ color: "white", textAlign: "center" }}>Business LOGO</h2></Grid>
+                    <Grid className='menubar' item lg={6} md={6} sm={12} marginTop={"1.4rem"} marginBottom={"1.6rem"} >
+                        <Link href='' sx={{ fontSize: "13px", textDecoration: "none", color: 'white', paddingLeft: "20px", paddingRight: "20px" }}>Products</Link>
+                        <Link href='' sx={{ fontSize: "13px", textDecoration: "none", color: 'white', paddingLeft: "20px", paddingRight: "20px" }}>Solutions</Link>
+                        <Link href='' sx={{ fontSize: "13px", textDecoration: "none", color: 'white', paddingLeft: "20px", paddingRight: "20px" }}>Resources</Link>
+                        <Link href='' sx={{ fontSize: "13px", textDecoration: "none", color: 'white', paddingLeft: "20px", paddingRight: "20px" }}>Pricing</Link>
+                        <Link href='' sx={{ fontSize: "13px", textDecoration: "none", color: 'white', paddingLeft: "20px", paddingRight: "20px" }}>LogIn</Link>
+                        <span style={{ marginTop: '-10px', marginLeft: '40px' }}>
+                            {getStartedForFreeButton('contained')}
+                        </span>
+                    </Grid>
+                    <Grid className='hamburgerbutton' item lg={2} md={2} sm={2} xs={2} sx={{ justifyContent: 'center', alignItems: 'center', textAlign: 'center' }}>
+                        <Button sx={{ textAlign: 'right', border: 'none', backgroundColor: 'transparent' }} onClick={() => setDrawer(true)} >
+                            <DehazeIcon sx={{ color: 'white' }} />
+                        </Button>
+                        <SwipeableDrawer PaperProps={{ sx: { backgroundColor: '#FFFEE9', color: '#061838' } }} anchor='right' open={drawer} onClose={() => setDrawer(false)} onOpen={() => setDrawer(true)}>
+                            {drawerList()}
+                        </SwipeableDrawer>
+                    </Grid>
                 </Grid>
-                <Grid className='hamburgerbutton' item lg={2} md={2} sm={2} xs={2} sx={{ justifyContent: 'center', alignItems: 'center', textAlign: 'center' }}>
-                    <Button sx={{ textAlign: 'right', border: 'none', backgroundColor: 'transparent' }} onClick={() => setDrawer(true)} >
-                        <DehazeIcon sx={{ color: 'white' }} />
-                    </Button>
-                    <SwipeableDrawer PaperProps={{sx:{backgroundColor:'#FFFEE9', color:'#061838'}}}  anchor='right' open={drawer} onClose={() => setDrawer(false)} onOpen={() => setDrawer(true)}>
-                        {drawerList()}
-                    </SwipeableDrawer>
-                </Grid>
+
+
+                <Grid container lg={12} md={12} sm={12} xs={12} sx={{ height: '10px', backgroundImage: 'linear-gradient(to bottom, rgba(45, 121, 255,0.6), rgba(45, 121, 255,0.3))' }}></Grid>
+                <Grid container lg={12} md={12} sm={12} xs={12} sx={{ height: '20px', backgroundImage: 'linear-gradient(to bottom, rgba(45, 121, 255,0.3), rgba(45, 121, 255,0.1))' }}></Grid>
+                <Grid container lg={12} md={12} sm={12} xs={12} sx={{ height: '20px', backgroundImage: 'linear-gradient(to bottom, rgba(45, 121, 255,0.1), rgba(45, 121, 255,0))' }}></Grid>
+
             </Grid>
-
-
 
             <Grid className='imagecontainer' container sx={{ backgroundColor: "#0b1928", justifyContent: 'space-between' }}>
                 <Grid container md={5} sm={5} xs={5} sx={{ justifyContent: "center", alignItems: 'center' }}>
                     <Grid item md={1} sm={1} xs={2}></Grid>
                     <Grid item md={8} sm={8} xs={8}>
-                        <Typography variant='h4' color={'#FCF3CF'} sx={{ textAlign: 'left' }}>AUTOMATE MANUAL <br />DATA ENTRY USING AI </Typography>
-                        <Typography variant='body1' color={'#FCF3CF'} sx={{ textAlign: 'left', paddingTop: '40px' }}>Capture data from documents instantly <br />Reduce turn around times and the manual effort required</Typography>
+                        <Typography className='textboxtoanimate' variant='h4' color={'#FCF3CF'} sx={{ textAlign: 'left' }}>AUTOMATE MANUAL <br />DATA ENTRY USING AI </Typography>
+                        <Typography className='textboxtoanimate' variant='body1' color={'#FCF3CF'} sx={{ textAlign: 'left', paddingTop: '40px' }}>Capture data from documents instantly <br />Reduce turn around times and the manual effort required</Typography>
                     </Grid>
                     <Grid item md={3} sm={3} xs={4}></Grid>
 
@@ -150,14 +156,9 @@ const LandingPage = () => {
                             </div>
                         </Grid>
                     </Grid>
-
                 </Grid>
 
-                <Grid container md={4} sm={4}>
-                    <Grid item>
-                        <img className='ocrimage' src={ocrImage} alt="ocrImage" />
-                    </Grid>
-                </Grid>
+                <img className='ocrimage' src={ocrImage} alt="ocrImage" />
             </Grid>
 
             <Grid container>
@@ -207,18 +208,18 @@ const LandingPage = () => {
 
             <Grid container sx={{ backgroundColor: '#E2DABC' }} paddingTop={'50px'} paddingLeft={'4%'} paddingRight={'4%'}>
                 <Grid container md={12} sm={12} sx={{ justifyContent: 'space-between' }} >
-                    <Grid item md={6} sm={12} sx={{ alignSelf: 'center' }}>
+                    <Grid item md={6} sm={11} sx={{ alignSelf: 'center' }}>
                         <Typography variant='h5'><b>Capture Only What You Want</b></Typography>
                         <Typography variant='body1' paddingTop={'25px'}>Keep your data clean and crisp – upload unstructured invoices from multiple customers but only<br />extract fields you need. You can also add new fields if required.</Typography>
                     </Grid>
-                    <Grid item md={4} sm={12} paddingRight={'20%'}>
-                        <img className='sideimage' src={sideImage1} alt='sideImage1' />
-                    </Grid>
+                    <img className='sideimage' src={sideImage1} alt='sideImage1' />
+
+                    {/* <Grid item md={2} sm={1} ></Grid>
+                    <Grid item md={2} sm={12} paddingRight={'20%'}>
+                    </Grid> */}
                 </Grid>
                 <Grid container md={12} sm={12} sx={{ justifyContent: 'space-between' }} paddingTop={'40px'}>
-                    <Grid item md={4} sm={12}>
-                        <img className='sideimage' src={sideImage2} alt='sideImage2' />
-                    </Grid>
+                    <img className='sideimage' src={sideImage2} alt='sideImage2' />
                     <Grid item md={6} sm={12} sx={{ alignSelf: 'center' }} >
                         <Typography variant='h5'><b>AI that Learns with every new Document</b></Typography>
                         <Typography variant='body1' paddingTop={'20px'}>
@@ -246,7 +247,7 @@ const LandingPage = () => {
                         : ''
                 }
 
-                <Grid container lg={3} md={3} sm={12} marginRight={'50px'} sx={{ justifyContent: 'center', alignItems: 'center' }}>
+                <Grid container lg={3} md={3} sm={12} marginRight={'40px'} sx={{ justifyContent: 'center', alignItems: 'center' }}>
                     <Grid item >
                         <Button variant={'contained'} sx={{ borderRadius: "50px", paddingLeft: "20px", paddingRight: "20px", fontSize: "10px", width: "200px", height: "40px" }}>
                             <b>Get Started for Free</b>
@@ -259,16 +260,14 @@ const LandingPage = () => {
 
 
 
-            <Grid container md={12} sm={12} sx={{ justifyContent: 'space-between', backgroundColor: '#E2DABC' }} paddingLeft={'4%'} paddingRight={'4%'}>
+            <Grid container md={12} sm={12} sx={{ backgroundColor: '#E2DABC', justifyContent: 'space-between' }} paddingLeft={'4%'} paddingRight={'4%'}>
                 <Grid item md={6} sm={12} sx={{ alignSelf: 'center' }}>
                     <Typography variant='h5'><b>Seamlessly upload documents and export data</b></Typography>
                     <Typography variant='body1' paddingTop={'25px'}>
                         Customers send you documents only via email? This BRAND supports <br />platforms you can directly import from or export to your existing workflow <br />without disrupting your system
                     </Typography>
                 </Grid>
-                <Grid item md={4} sm={12} paddingRight={'20%'}>
-                    <img className='sideimage' src={sideImage4} alt='sideImage4' />
-                </Grid>
+                <img className='sideimage' src={sideImage4} alt='sideImage4' />
                 <Grid item lg={12} md={12} sm={12} paddingTop={'100px'}>
                     <Typography variant='h3' color={'#0C1128'} textAlign={'center'}>Start now with your <b>FREE Plan!</b></Typography>
                 </Grid>
@@ -276,7 +275,8 @@ const LandingPage = () => {
 
 
 
-            <Grid container lg={12} md={12} sm={12} sx={{ backgroundColor: '#E2DABC' }} paddingTop={'60px'} paddingBottom={'100px'} >
+            <Grid className='paycardsbackground' container lg={12} md={12} sm={12} xs={12} sx={{ backgroundColor: '#E2DABC' }} >
+                <Grid container lg={12} md={12} sm={12} xs={12} sx={{ height: '100px', backgroundImage: 'linear-gradient(to bottom, rgba(226, 218, 188,1), rgba(226, 218, 188,0))' }}></Grid>
 
                 <Grid className='firstcard' container lg={4} md={4} sm={12} sx={{ alignItems: 'center' }}>
                     <Card className='plancard' sx={{ height: '550px', borderRadius: '10px', backgroundColor: '#ACA36D' }}>
@@ -428,6 +428,7 @@ const LandingPage = () => {
                     </Card>
 
                 </Grid>
+                <Grid container lg={12} md={12} sm={12} xs={12} sx={{ height: '100px', backgroundImage: 'linear-gradient(to top, rgba(255, 250, 232,1), rgba(255, 250, 232,0))' }}></Grid>
             </Grid>
 
 
