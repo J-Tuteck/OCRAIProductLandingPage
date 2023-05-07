@@ -2,6 +2,14 @@
     --dark-grey: #1a2a32;
 }
 
+*{
+    scrollbar-width: none; /*for firefox*/
+}
+
+*::-webkit-scrollbar { 
+    width: 0 !important  /* for chrome */
+}
+
 
 
 .menubar{
